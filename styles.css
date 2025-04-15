@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg, #111, #333);
+  color: #fff;
+}
+
+.container {
+  background: #1e1e1e;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  width: 350px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.container:hover {
+  transform: scale(1.02);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tabs label {
+  color: #ccc;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding-bottom: 5px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input#tab-login:checked~.tabs label[for="tab-login"],
+input#tab-cadastro:checked~.tabs label[for="tab-cadastro"] {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+form {
+  display: none;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease;
+}
+
+#tab-login:checked~.form-wrapper #login,
+#tab-cadastro:checked~.form-wrapper #cadastro {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  margin: 10px 0;
+  background: #2e2e2e;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.forgot {
+  text-align: right;
+  font-size: 14px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+.forgot a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.forgot a:hover {
+  color: #fff;
+}
+
+/* Estilo para a seção "Lembrar senha/Esqueci senha" */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #bbb;
+  cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+  accent-color: #fff;
+  /* Cor do checkbox */
+}
+
+.forgot-password {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.forgot-password:hover {
+  color: #fff;
+}
+
+button.submit {
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button.submit:hover {
+  background: #ddd;
+}
